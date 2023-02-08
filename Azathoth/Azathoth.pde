@@ -1,12 +1,4 @@
-import nervoussystem.obj.*;
-
-import de.bezier.math.combinatorics.*;
-
-import extruder.*;
-
-import ComputationalGeometry.*;
-import quickhull3d.*;
-import template.library.*;
+//import nervoussystem.obj.*;
 
 import peasy.*;
 
@@ -32,7 +24,6 @@ public void draw() {
   pg.resetMatrix();
   pcam.feed();
   pg.background(230);
-  //pg.translate(pg.width/2,pg.height/2);//unnecessary
   pg.box(20);
   pg.endDraw();
 }
