@@ -237,4 +237,8 @@ public class P3dFace extends NurbsSurface {
   public void setTKnotVector(float[] tKnotVector){
     this.tKnotVector=tKnotVector;
   }
+  ////hmmm... how to make it recognize arbitrary dots as a possible planar surface....
+  //public boolean verifyPlanarSurface(P3dPoint[][] points) {
+  //  return true;
+  //}
 }

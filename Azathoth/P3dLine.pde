@@ -7,6 +7,7 @@ public class P3dLine extends NurbsCurve {
   private float[] weights;
   private int degrees;
   private float[] knotVector;
+  private PShape myLine;
 
   P3dLine(String ID, P3dPoint[] c1) {
     super(pointsToVectors(c1));
@@ -245,5 +246,22 @@ public class P3dLine extends NurbsCurve {
     P3dPoint[] c3;
     c3 = (P3dPoint[]) cleanspot.toArray();
     return c3;
+  }
+  
+  public void draw(){
+    if (this.type==0){
+      if (this.myLine==null){
+        float a=this.p1.getX();
+        float b=this.p1.getY();
+        float c=this.p1.getZ();
+        float d=this.p2.getX();
+        float e=this.p2.getY();
+        float f=this.p2.getZ();
+        this.myLine=createShape(LINE,a,d,b,e,c,f);
+      }
+      shape(this.myLine);
+    } else if (this.type==1) {
+      super.draw(g,segments);
+    }
   }
 }

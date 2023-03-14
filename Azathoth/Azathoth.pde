@@ -9,8 +9,8 @@ import g4p_controls.*;
 import peasy.*;
 
 PShape axes;
+//P3dShape block;
 PShape block;
-PShape ball;
 PShape pointBlob;
 static int pointcounter, segments, surfaceCounter, primCounter, worldWidth;
 static{
@@ -40,7 +40,8 @@ public void draw() {
   pcam.feed();
   pg.background(230);
   pg.shape(axes);
-  pg.shape(block);//this is temporary.
+  pg.shape(block);
+  //block.drawSolid(pg);
   pg.endDraw();
 }
 
@@ -52,6 +53,7 @@ public void customGUI() {
   PeasyCam pcam = ViewFinder.getPeasyCam();
   pcam.setMinimumDistance(0.1);
   pcam.setMaximumDistance(800.0);
+  
 }
 public void initializeShapes() {
   axes = createShape();
@@ -68,13 +70,13 @@ public void initializeShapes() {
   axes.vertex(0,0,-worldWidth);
   axes.endShape();
   
-  block = createShape(BOX, 20);
+  block = createShape(BOX, 30);
   block.setFill(color(255));
   block.setStroke(color(0));
-  
+  //block = new P3dShape();
   pointBlob=createShape(SPHERE, 1);
-  pointBlob.setFill(color(244,244,255),195);
-  pointBlob.setStroke(color(233,233,255),195);
+  pointBlob.setFill(color(244,244,255,175));
+  pointBlob.setStroke(color(233,233,255,195));
   
 }
 
