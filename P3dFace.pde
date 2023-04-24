@@ -365,7 +365,7 @@ public class P3dFace extends NurbsSurface {
       fill(SurfColor[0], SurfColor[1], SurfColor[2]);
       stroke(SurfColor[0], SurfColor[1], SurfColor[2]);
       pushMatrix();
-      shape(this.polygon);
+      pg.shape(this.polygon);
       popMatrix();
       break;
     case 1:
@@ -374,7 +374,7 @@ public class P3dFace extends NurbsSurface {
       pushMatrix();
       super.draw(pg, segments);
       noFill();
-      shape(this.polygon);
+      pg.shape(this.polygon);
       popMatrix();
       break;
     default:

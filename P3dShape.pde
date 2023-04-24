@@ -19,7 +19,7 @@ public class P3dShape extends PShape{
   private boolean solid;
   
   P3dShape() {//default constructor for those who need it because they couldn't be arsed to provide details.
-    super(g, BOX, 6, 6, 6);
+    super(g, BOX, 12, 12, 12);
     this.vertices=new ArrayList<P3dPoint>(27);
     for (int i=0; i<27; i++) {
       this.vertices.add(new P3dPoint(0, 0, 0));
@@ -187,16 +187,21 @@ public class P3dShape extends PShape{
   }
 
   public void draw(PGraphics pg) {
-    
+    pushMatrix();
     for (P3dPoint p : this.vertices) {
-      p.draw();
+      p.draw(pg);
     }
+    popMatrix();
+    pushMatrix();
     for (P3dLine l : this.edges) {
       l.draw(pg);
     }
+    popMatrix();
+    pushMatrix();
     for (P3dFace f : this.faces) {
       f.draw(pg);
       f.rotate(this.rotation);
     }
+    popMatrix();
   }
 }

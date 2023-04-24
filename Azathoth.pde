@@ -8,7 +8,7 @@ import peasy.*;
 
 PShape axes;
 P3dShape block;
-//PShape block;
+P3dPoint originPoint;
 PShape pointBlob;
 int[] SurfColor;
 static int pointcounter, segments, surfaceCounter, primCounter, worldWidth;
@@ -41,6 +41,7 @@ public void draw() {
   pg.background(230);
   pg.shape(axes);
   pg.shape(block);
+  originPoint.draw(pg);
   block.draw(pg);
   pg.endDraw();
 }
@@ -69,12 +70,12 @@ public void initializeShapes() {
   axes.vertex(0, 0, -worldWidth);
   axes.endShape();
   block = new P3dShape();
-  //block = createShape(BOX, 30);
   block.setFill(color(255));
   block.setStroke(color(0));
   pointBlob=createShape(SPHERE, 1);
   pointBlob.setFill(color(244, 244, 255, 175));
   pointBlob.setStroke(color(233, 233, 255, 195));
+  originPoint=new P3dPoint(0,0,0,"origin");
 }
 
 //converters

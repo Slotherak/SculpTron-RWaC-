@@ -92,13 +92,13 @@ class P3dPoint extends Nurbs implements Comparable<P3dPoint> {
     return difference;
   }
 
-  public void draw() {
-    PShape pointBlob=createShape(SPHERE, 1);
-    pointBlob.setFill(color(244, 244, 255, 195));
-    pointBlob.setStroke(color(233, 233, 255, 195));
+  public void draw(PGraphics pg) {
+    //PShape pointBlob=createShape(SPHERE, 1);
+    //pointBlob.setFill(color(244, 244, 255, 195));
+    //pointBlob.setStroke(color(233, 233, 255, 195));
     pushMatrix();
     translate(x, y, z);
-    shape(pointBlob);
+    pg.shape(pointBlob);
     popMatrix();
   }
 }

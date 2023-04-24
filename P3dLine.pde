@@ -245,9 +245,11 @@ public class P3dLine extends NurbsCurve {
         float d=this.p2.getX();
         float e=this.p2.getY();
         float f=this.p2.getZ();
-        this.myLine=createShape(LINE, a, d, b, e, c, f);
+        this.myLine=pg.createShape(LINE, a, d, b, e, c, f);
       }
-      shape(this.myLine);
+      pushMatrix();
+      pg.shape(this.myLine);
+      popMatrix();
     } else if (this.type==1) {
       super.draw(pg, segments);
     }
